@@ -1,0 +1,26 @@
+<div>
+  <h3>Create a List</h3>
+  <ul>
+    <li *ngFor="let list of list">
+      <a routerLink="/detail/{{list.id}}">{{list.id + 1}} - {{list.name}}</a></li>
+  </ul>
+</div>
+<div>
+  <form #taskData="ngForm" (ngSubmit)="onSubmit(taskData.value)">
+    <div>
+        <label for="id">ID:</label>
+        <input type="number" placeholder="ID" name="id" required ngModel>
+    </div>
+    <div>
+      <label for="name">Task Name:</label>
+      <input type="text" placeholder="Task Name" name="name" required ngModel>
+    </div>
+    <div>
+      <label for="details">Task Details:</label>
+      <textarea type="text" placeholder="Task Details" name="details" required ngModel></textarea>
+    </div>
+    <div>
+        <button type="submit">Submit</button>
+      </div>
+  </form>
+</div>
